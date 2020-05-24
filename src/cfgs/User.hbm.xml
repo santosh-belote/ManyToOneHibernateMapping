@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"https://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.nt.domain">
+
+	<class name="User" table="user">
+
+		<id name="userId" />
+		<property name="firstName" />
+		<property name="lastName" />
+		<property name="address" />
+		<set name="phones" cascade="all">
+
+			<key column="userId" />
+			<many-to-many class="PhoneNumber" />
+		</set>
+	</class>
+</hibernate-mapping>
